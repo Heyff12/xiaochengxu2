@@ -1,0 +1,108 @@
+<import src="post-item/post-item-template.wxml" /><!-- 相对路径ok
+<!-- <import src="/pages/posts/post-item/post-item-template.wxml" /> --><!-- 绝对路径ok -->
+<view>
+    <swiper vertical="{{false}}" indicator-dots="true" autoplay="true" interval="3000" indicator-active-color="#881100">
+        <swiper-item>
+            <image src="/images/wx.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/vr.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/iqiyi.png"></image>
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{postList}}" wx:key="" wx:for-index="idx">
+        <template is="postItem" data="{{...item}}" />
+        <!-- <view class="post_con">
+            <view class="post_author">
+                <image src="{{item.avatar}}"></image>
+                <text>{{item.date}}</text>
+            </view>
+            <text class="post_title">{{item.title}}</text>
+            <image class="post_img" src="{{item.imgSrc}}"></image>
+            <text class="post_content">{{item.content}}</text>
+            <view class="post_like">
+                <image src="/images/icon/chat.png"></image>
+                <text>{{item.collection}}</text>
+                <image src="/images/icon/view.png"></image>
+                <text>{{item.reading}}</text>
+            </view>
+        </view> -->
+    </block>
+    <!-- <view class="post_con">
+        <view class="post_author">
+            <image src="/images/avatar/1.png"></image>
+            <text>2017-07-11</text>
+        </view>
+        <text class="post_title">文字标题文字标题文字标题</text>
+        <image class="post_img" src="/images/post/cat.png"></image>
+        <text class="post_content">文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介</text>
+        <view class="post_like">
+            <image src="/images/icon/chat.png"></image>
+            <text>92</text>
+            <image src="/images/icon/view.png"></image>
+            <text>65</text>
+        </view>
+    </view>
+    <view class="post_con">
+        <view class="post_author">
+            <image src="/images/avatar/1.png"></image>
+            <text>2017-07-11</text>
+        </view>
+        <text class="post_title">文字标题文字标题文字标题</text>
+        <image class="post_img" src="/images/post/cat.png"></image>
+        <text class="post_content">文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介</text>
+        <view class="post_like">
+            <image src="/images/icon/chat.png"></image>
+            <text>92</text>
+            <image src="/images/icon/view.png"></image>
+            <text>65</text>
+        </view>
+    </view>
+    <view class="post_con">
+        <view class="post_author">
+            <image src="/images/avatar/1.png"></image>
+            <text>2017-07-11</text>
+        </view>
+        <text class="post_title">文字标题文字标题文字标题</text>
+        <image class="post_img" src="/images/post/cat.png"></image>
+        <text class="post_content">文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介</text>
+        <view class="post_like">
+            <image src="/images/icon/chat.png"></image>
+            <text>92</text>
+            <image src="/images/icon/view.png"></image>
+            <text>65</text>
+        </view>
+    </view>
+    <view class="post_con">
+        <view class="post_author">
+            <image src="/images/avatar/1.png"></image>
+            <text>2017-07-11</text>
+        </view>
+        <text class="post_title">文字标题文字标题文字标题</text>
+        <image class="post_img" src="/images/post/cat.png"></image>
+        <text class="post_content">文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介</text>
+        <view class="post_like">
+            <image src="/images/icon/chat.png"></image>
+            <text>92</text>
+            <image src="/images/icon/view.png"></image>
+            <text>65</text>
+        </view>
+    </view>
+    <view class="post_con">
+        <view class="post_author">
+            <image src="/images/avatar/1.png"></image>
+            <text>2017-07-11</text>
+        </view>
+        <text class="post_title">文字标题文字标题文字标题</text>
+        <image class="post_img" src="/images/post/cat.png"></image>
+        <text class="post_content">文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介文字简介</text>
+        <view class="post_like">
+            <image src="/images/icon/chat.png"></image>
+            <text>92</text>
+            <image src="/images/icon/view.png"></image>
+            <text>65</text>
+        </view>
+    </view> -->
+</view>

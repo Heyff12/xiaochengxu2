@@ -1,7 +1,7 @@
-<view class="container">
-	<image src="/images/avatar/4.png"></image>
-	<text>hello,七月</text>
-	<view>
-		<text>开起小程序之旅</text>
+<view class="container" bindtap="test_maopao">
+	<image class="user-avatar" src="/images/avatar/4.png"></image>
+	<text class="user-name">hello,七月</text>
+	<view class="moto-container" bindtap="goto_list">
+		<text class="moto">开起小程序之旅</text>
 	</view>	
 </view>	
