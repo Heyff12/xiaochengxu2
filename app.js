@@ -27,6 +27,8 @@ App({
     },
 
     globalData: {
-        userInfo: null
+        userInfo: null,
+        g_isplaying: false,//音乐是否在播放
+        g_currentMusicId: null//那个音乐id在播放
     }
 })
