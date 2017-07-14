@@ -1,0 +1,11 @@
+@import '../movie/movie_template.wxss';
+.movieFrid_cont{
+	width: 100%;
+    padding: 10px 20rpx;
+    box-sizing: border-box;
+    height:1300rpx;
+}
+.movieFrid_detail{
+	float:left;
+	margin:10rpx 17rpx;
+}

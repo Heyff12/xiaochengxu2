@@ -133,7 +133,7 @@ Page({
             success: function(res) {
                 //res.cancle点击取消
                 // console.log(res.tapIndex); //点击序号
-                if (res.tapIndex) {
+                if (res.tapIndex>=0) {
                     wx.showModal({
                         title: "用户" + itemzu[res.tapIndex],
                         content: ""

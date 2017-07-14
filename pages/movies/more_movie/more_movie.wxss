@@ -1,0 +1,4 @@
+@import '../movie-grid/movie-grid.wxss';
+.moreMovie_cont {
+    
+}

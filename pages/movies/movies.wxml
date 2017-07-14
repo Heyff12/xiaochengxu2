@@ -1,0 +1,8 @@
+<import src="movie_list/movie_list_template.wxml" />
+<view class="movie_search">
+</view>
+<view class="movie_list">
+    <template is="movieListTemplate" data="{{...inTheaters}}" />
+    <template is="movieListTemplate" data="{{...comingsoon}}" />
+    <template is="movieListTemplate" data="{{...top250}}" />
+</view>

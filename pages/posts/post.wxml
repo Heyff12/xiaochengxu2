@@ -2,7 +2,10 @@
 <!-- <import src="/pages/posts/post-item/post-item-template.wxml" /> --><!-- 绝对路径ok -->
 <view>
     <swiper vertical="{{false}}" indicator-dots="true" autoplay="true" interval="3000" indicator-active-color="#881100">
-        <swiper-item>
+        <swiper-item wx:for="{{imgList}}" wx:key="" wx:for-index="idx">
+            <image catchtap="onImgtap" data-id="{{item.postId}}" src="{{item.imgSrc}}"></image>
+        </swiper-item>
+        <!-- <swiper-item>
             <image src="/images/wx.png"></image>
         </swiper-item>
         <swiper-item>
@@ -10,7 +13,7 @@
         </swiper-item>
         <swiper-item>
             <image src="/images/iqiyi.png"></image>
-        </swiper-item>
+        </swiper-item> -->
     </swiper>
     <block wx:for="{{postList}}" wx:key="" wx:for-index="idx">
         <view  catchtap="onPostTap" data-id="{{item.postId}}">

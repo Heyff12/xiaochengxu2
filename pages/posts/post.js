@@ -7,10 +7,17 @@ Page({
     onLoad: function(options) {
         //console.log('onLoad');
         this.setData({
-            postList: postsData.postList
+            postList: postsData.postList,
+            imgList:postsData.postList.slice(0,3)
         });
     },
     onPostTap: function(event) {
+        var id = event.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: "post-detail/post-detail?id=" + id,
+        });
+    },
+    onImgtap: function(event) {
             var id = event.currentTarget.dataset.id;
             wx.navigateTo({
                 url: "post-detail/post-detail?id=" + id,
