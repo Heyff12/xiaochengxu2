@@ -5,15 +5,18 @@ Page({
     data: {
         inTheaters: {},
         comingsoon: {},
-        top250: {}
+        top250: {},
+        coantainerShow: true,
+        searchPanelShow: false,
+        searchResult: {}
     },
     onLoad: function(event) {
         var inTheatersUrl = app.globalData.g_doubanBase + "/v2/movie/in_theaters";
         var comingsoonUrl = app.globalData.g_doubanBase + "/v2/movie/coming_soon";
         var top250Url = app.globalData.g_doubanBase + "/v2/movie/top250";
-        this.getMovieListData(inTheatersUrl, 'inTheaters', '正在热映');
-        this.getMovieListData(comingsoonUrl, 'comingsoon', '即将上映');
-        this.getMovieListData(top250Url, 'top250', 'Top250');
+        this.getMovieListData(inTheatersUrl, 'inTheaters', '正在热映', 3);
+        this.getMovieListData(comingsoonUrl, 'comingsoon', '即将上映', 3);
+        this.getMovieListData(top250Url, 'top250', 'Top250', 3);
     },
     //列表点击更多
     onMoreTap: function(event) {
@@ -22,13 +25,39 @@ Page({
             url: "more_movie/more_movie?category=" + cate
         });
     },
-    getMovieListData: function(url, name, bank_title) {
+    //搜索框选中
+    onBindFocus: function(event) {
+        //显示搜索页面
+        this.setData({
+            coantainerShow: false,
+            searchPanelShow: true,
+            searchResult: {}
+        });
+    },
+    //搜索框内容变化
+    onBindchange: function(event) {
+        var text = event.detail.value;
+        var serchUrl = app.globalData.g_doubanBase + "/v2/movie/search?q=" + text;
+        var postdata = {
+            'start': 0,
+            'count': 20
+        };
+        this.getMovieListData(serchUrl, 'searchResult', '', 100);
+    },
+    onCancle: function() {
+        //隐藏搜索页面
+        this.setData({
+            coantainerShow: true,
+            searchPanelShow: false
+        });
+    },
+    getMovieListData: function(url, name, bank_title, num) {
         var _this = this;
         wx.request({
             url: url,
             data: {
                 'start': 0,
-                'count': 3
+                'count': num
             },
             method: 'GET',
             header: {

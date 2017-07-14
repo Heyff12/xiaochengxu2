@@ -40,7 +40,7 @@ Page({
         }
         this.setMusicMonitor();
     },
-    //监听音乐播放暂停
+    //监听音乐播放暂停、结束
     setMusicMonitor: function() {
         var _this = this;
         wx.onBackgroundAudioPlay(function() {
@@ -51,6 +51,13 @@ Page({
             app.globalData.g_currentMusicId = _this.data.post_Id;
         });
         wx.onBackgroundAudioPause(function() {
+            _this.setData({
+                isPlaying: false
+            });
+            app.globalData.g_isplaying = false;
+            app.globalData.g_currentMusicId = _this.data.null;
+        });
+        wx.onBackgroundAudioStop(function(){
             _this.setData({
                 isPlaying: false
             });
@@ -133,7 +140,7 @@ Page({
             success: function(res) {
                 //res.cancle点击取消
                 // console.log(res.tapIndex); //点击序号
-                if (res.tapIndex>=0) {
+                if (res.tapIndex >= 0) {
                     wx.showModal({
                         title: "用户" + itemzu[res.tapIndex],
                         content: ""

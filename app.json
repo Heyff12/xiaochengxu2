@@ -17,17 +17,17 @@
             "pagePath": "pages/welcome/welcome",
             "text": "首页",
             "iconPath": "/images/tab/ciwei.png",
-            "selectedIconPath": "/images/tab/ciwei_hl.png"
+            "selectedIconPath": "images/tab/ciwei_hl.png"
         }, {
             "pagePath": "pages/posts/post",
             "text": "阅读",
             "iconPath": "/images/tab/yuedu.png",
-            "selectedIconPath": "/images/tab/yuedu_hl.png"
+            "selectedIconPath": "images/tab/yuedu_hl.png"
         }, {
             "pagePath": "pages/movies/movies",
             "text": "电影",
             "iconPath": "/images/tab/dianying.png",
-            "selectedIconPath": "/images/tab/dianying_hl.png"
+            "selectedIconPath": "images/tab/dianying_hl.png"
         }],
         "borderStyle": "white",
         "selectedColor": "#3f51b5",
