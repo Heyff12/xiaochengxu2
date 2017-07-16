@@ -85,6 +85,13 @@ Page({
         //关闭下拉加载
         wx.stopPullDownRefresh();
     },
+    //点击进入电影详情页
+    onMovieTap: function(event) {
+        var id = event.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: "../movie-detail/movie-detail?movieid=" + id
+        });
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

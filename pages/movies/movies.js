@@ -25,6 +25,13 @@ Page({
             url: "more_movie/more_movie?category=" + cate
         });
     },
+    //点击进入电影详情页
+    onMovieTap: function(event) {
+        var id = event.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: "movie-detail/movie-detail?movieid=" + id
+        });
+    },
     //搜索框选中
     onBindFocus: function(event) {
         //显示搜索页面
